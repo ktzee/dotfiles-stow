@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+command=$(basename "$0")
+
+if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+    echo "usage:
+  $command [--help | -h]
+  $command [PAIR | PAIR_ALTNAME] [PAIR]
+
+examples:
+
+  $command
+  $command XXBTZEUR
+  $command XBTEUR XXBTZEUR
+  $command DOTUSD"
+    exit 0
+fi
+
+pair_altname="${1:-"XXBTZUSD"}"
+pair="${2:-"$pair_altname"}"
+api_url="https://api.kraken.com/0/public/Ticker?pair=$pair_altname"
+#chart_url="??" # Kraken's price graphs can't be derived directly from the trade pair pair
+
+#[ "$BLOCK_BUTTON" = "1" ] && xdg-open "$chart_url"
+
+if ! result="$(curl -s "$api_url")"; then
+    echo "error"
+    echo "error"
+    echo "#ff0000"
+    exit 0
+fi
+
+# "c" is "last trade closed"
+# https://docs.kraken.com/rest/#operation/getTickerInformation
+LC_NUMERIC="en_US.UTF-8" printf " %.2f\n" "$(echo "$result" | jq -r ".[\"result\"][\"$pair\"][\"c\"][0]")"

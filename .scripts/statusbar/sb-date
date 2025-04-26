@@ -1,0 +1,11 @@
+#!/bin/sh
+case $BLOCK_BUTTON in
+	1) notify-send "This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")" ;;
+	2) notify-send "LOL";;
+	3) notify-send "🪨 CPU load module" "Each bar represents
+one CPU core";;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+date=$(date '+%b %d (%a) %H:%M:%S')
+printf " %s %s \\n" "$date"

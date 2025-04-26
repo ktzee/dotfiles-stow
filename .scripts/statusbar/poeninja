@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+# divine orb
+LEAGUE=Affliction
+curl -s -X GET "https://poe.ninja/api/data/CurrencyHistory?league=${LEAGUE}&type=Currency&currencyId=3" | jq ."receiveCurrencyGraphData[-1].value | floor"

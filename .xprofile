@@ -1,0 +1,21 @@
+xrdb $HOME/.Xresources & xrdbpid=$!
+# /usr/lib/geoclue-2.0/demos/agent &
+xiccd &
+# blueman-applet &
+# nm-applet &
+# picom --config $HOME/.config/picom/picom.conf &
+# redshift-qt &
+# polkit-dumb-agent &
+# $HOME/.scripts/setdisplay.sh &
+# syncthing > $HOME/.local/log/syncthing &
+feh --bg-scale $HOME/Pictures/wallpapers/current --no-fehbg &
+for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done &
+# /usr/lib/pam_kwallet_init &
+# setxkbmap -layout us,it -option 'grp:shifts_toggle' &
+# ckb-next -b &
+# noisetorch &
+# /usr/lib/kdeconnectd &
+# /usr/bin/kdeconnect-indicator &
+
+# Ensure that xrdb has finished running before moving on to start the WM/DE.
+[ -n "$xrdbpid" ] && wait "$xrdbpid"

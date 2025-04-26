@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+current_sink=$(pactl list short sinks | grep RUNNING | awk '{print $1}')
+
+if [[ $current_sink == 1 ]]; then
+        paswitch 0
+else
+        paswitch 1
+fi

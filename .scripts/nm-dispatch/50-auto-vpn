@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Ensures that this script is only triggered when the interface
+# is being activated
+# Is it my MyNetwork UUID?
+#if [[ "$CONNECTION_UUID" == "0b3ed2f9-a396-451b-bbd9-a08cf3424334" ]] ; then
+if [[ "$1" == "tun1" ]] ; then
+	
+	if [[ "$2" == "up" ]] ; then
+		 # Run my command /usr/bin/xpto
+
+   		/usr/bin/date > /tmp/test_up
+		/usr/bin/echo $@ >> /tmp/test_up
+		/usr/bin/env >> /tmp/test_up
+   		/usr/bin/date > /home/ktz/last_fw
+		/usr/bin/echo "$2" >> /home/ktz/last_fw
+		#/usr/bin/curl -d 'port=43730' 'http://10.31.33.7/fwd' >> /home/ktz/last_fw
+		/usr/bin/runuser - ktz -c '/usr/bin/qbittorrent-nox --webui-port=9000 -d'
+		exit 0
+	fi
+
+	if [[ "$2" == "down" ]] ; then
+   		/usr/bin/date > /tmp/test_down
+		/usr/bin/echo $@ >> /tmp/test_down
+		/usr/bin/env >> /tmp/test_down
+
+		/usr/bin/date > /home/ktz/last_fw
+		/usr/bin/echo "$2" >> /home/ktz/last_fw
+		/usr/bin/killall qbittorrent-nox
+		exit 0
+	fi
+
+
+fi
+

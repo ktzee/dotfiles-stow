@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+/home/ktz/.scripts/lights/strip_toggle.py
+pkill -SIGRTMIN+4 i3status-rs

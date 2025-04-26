@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+MINERIP="192.168.1.105"
+# power and hashrate
+DATA=$(curl -s -X GET "http://${MINERIP}:9090/stats")
+if [ -z "$DATA" ];
+then
+	echo "MINER DOWN"
+	echo "MINER DOWN"
+	echo "#ff0000"
+	exit 0
+fi
+power=$(echo "${DATA}" | jq .'Devices[0]."GPU 0".Power')
+temp=$(echo "${DATA}" | jq .'Devices[0]."GPU 0".Temperature')
+hashrate=$(echo "${DATA}" | jq .'Algorithms[0].Ethash.Total.Hashrate | tonumber' | cut -b 1-2)
+
+case $BLOCK_BUTTON in
+	1) $TERM -e tmux attach-session -t storage-remote
+esac
+
+echo "W: ${power} Temp: ${temp} HR: ${hashrate}MH/s"

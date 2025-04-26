@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+# coding=utf-8
+
+from lifxlan import LifxLAN
+
+lifxlan = LifxLAN(2)
+
+strip = lifxlan.get_device_by_name("Desk Strip")
+power = strip.get_power()
+if power == 65535:
+    print("ﳔ ON")
+else:
+    print("ﳔ OFF")
