@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term alacritty
 # Your preferred application launcher
 set $menu "rofi -combi-modi window,drun,run,ssh -show combi -show-icons"
 
@@ -37,13 +37,15 @@ blur_radius 3
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
-output DP-1 mode 2560x1440@165Hz position 0 720 adaptive_sync on allow_tearing yes
-output DP-2 mode 2560x1440@165Hz position 2560 0 transform 90 adaptive_sync on allow_tearing yes
+output DP-1 mode 2560x1440@165Hz position 0 720 adaptive_sync on allow_tearing yes bg /home/ktz/Pictures/wallpapers/jinx-1440p.png fill
+output DP-2 mode 2560x1440@165Hz position 2561 0 transform 90 adaptive_sync on allow_tearing yes bg /home/ktz/Pictures/wallpapers/landscape-1440x2560-portrait.png center
+
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output DP-1
+
 # fix games opening on wrong output
 exec_always --no-startup-id xrandr --output DP-1 --primary
 #
@@ -88,6 +90,7 @@ exec_always --no-startup-id xrandr --output DP-1 --primary
 exec_always --no-startup-id dunst&
 exec_always --no-startup-id /home/ktz/.config/waybar/launch_waybar.sh&
 exec_always --no-startup-id nm-applet --indicator&
+exec_always --no-startup-id syncthingtray-qt6 --wait&
 
 ### Key bindings
 #
@@ -277,7 +280,13 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    # screenshot active window
+    bindsym Print exec "/home/ktz/.scripts/sway-screenshot -m window -o /home/ktz/Pictures/Screenshots/"
+    # screenshot region
+    bindsym $mod+Print exec "/home/ktz/.scripts/sway-screenshot -m region -o /home/ktz/Pictures/Screenshots/"
+    # screenshot region without saving to file
+    bindsym $mod+Shift+Print exec "/home/ktz/.scripts/sway-screenshot --clipboard-only -m region"
+    # bindsym Print exec "notify-send lol"
 
 # bar {
 #     status_command waybar
