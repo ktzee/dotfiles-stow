@@ -66,14 +66,14 @@ button:hover {
 #pulseaudio {
     background-color: @surface1;
     color: @text;
-    border-radius: 3;
+    border-radius: 3px;
     padding: 0 5px 0 5px;
 }
 
 #pulseaudio.muted {
     background-color: #90b1b1;
     color: @crust;
-    border-radius: 3;
+    border-radius: 3px;
     padding: 0 5px 0 5px;
 }
 
@@ -89,42 +89,42 @@ button:hover {
 #cpu {
     background-color: alpha(@yellow, 1);
     color: @crust;
-    border-radius: 3;
+    border-radius: 3px;
     padding: 0 5px 0 5px;
 }
 
 #memory {
     background-color: alpha(@peach, 1);
     color: @crust;
-    border-radius: 3;
+    border-radius: 3px;
     padding: 0 5px 0 5px;
 }
 
 #disk {
     background-color: #964B00;
     background-color: alpha(@green, 0.5);
-    border-radius: 3;
+    border-radius: 3px;
 }
 
 #network {
     background-color: #2980b9;
     background-color: alpha(@flamingo, 0.9);
     color: @crust;
-    border-radius: 3;
+    border-radius: 3px;
     padding: 0 5px 0 5px;
 }
 
 #network.disconnected {
     background-color: #f53c3c;
     background-color: alpha(@green, 0.5);
-    border-radius: 3;
+    border-radius: 3px;
     padding: 0 5px 0 5px;
 }
 
 #temperature {
     background-color: alpha(@green, 0.5);
     color: @crust;
-    border-radius: 3;
+    border-radius: 3px;
     padding: 0 5px 0 5px;
 }
 
@@ -132,13 +132,13 @@ button:hover {
     background-color: @red;
     color: @crust;
     background-color: alpha(@green, 0.5);
-    border-radius: 3;
+    border-radius: 3px;
     padding: 0 5px 0 5px;
 }
 
 #power-profiles-daemon {
     padding: 0 5px 0 5px;
-    border-radius: 3;
+    border-radius: 3px;
 }
 
 #power-profiles-daemon.performance {
@@ -158,7 +158,7 @@ button:hover {
 
 #clock {
     background-color: alpha(@maroon, 0.4);
-    border-radius: 3;
+    border-radius: 3px;
     margin: 0 4px 0 4px;
     padding: 0 4px 0 4px;
 }

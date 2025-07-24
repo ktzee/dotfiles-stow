@@ -3,16 +3,16 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    // "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "reload_style_on_change" : true,
     "modules-left": [
-        "hyprland/workspaces",
+        "sway/workspaces"
     ],
     "modules-center": [
-        "hyprland/window"
+        "sway/window"
     ],
     "modules-right": [
         "mpd",
@@ -25,11 +25,19 @@
         "memory",
         "temperature",
         "keyboard-state",
-        "hyprland/language",
+        "sway/language",
         "clock",
         "tray",
         "custom/power"
     ],
+    "sway/workspaces": {
+        "format": "{name}: {icon}",
+        "format-icons": {
+        "urgent": "",
+        "focused": "",
+        "default": ""
+        }
+    },
     "keyboard-state": {
         "capslock": true,
         "format": "{name} {icon}",
@@ -75,7 +83,7 @@
          "icon-size": 21,
         "spacing": 10,
         "show-passive-items": true,
-        "expand" : true,
+        "expand" : true
     },
     "clock": {
         "format": "      {:%R\n %d.%m.%Y}",
