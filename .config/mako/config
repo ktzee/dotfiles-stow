@@ -1,1 +1,22 @@
+font=FiraMono Nerd Font 11
 anchor=bottom-right
+format=<b>%a ⏵</b> %s\n%b
+sort=-time
+output=DP-1
+layer=overlay
+background-color=#1e1e2e
+width=420
+height=110
+margin=5
+padding=0,5,10
+border-size=2
+border-color=#ea76cb
+border-radius=8
+default-timeout=5000
+max-icon-size=32
+
+[urgency=normal]
+border-color=#ea76cb
+[urgency=high]
+border-color=#d20f39
+default-timeout=0
