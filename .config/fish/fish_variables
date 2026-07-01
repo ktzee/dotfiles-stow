@@ -1,5 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export ANTHROPIC_VERTEX_PROJECT_ID:itpc\x2dgcp\x2dxe\x2deng\x2dclaude
+SETUVAR --export CLAUDE_CODE_USE_VERTEX:1
+SETUVAR --export CLOUD_ML_REGION:global
 SETUVAR --export --path GOPATH:/home/ktz/\x2ego/
 SETUVAR __done_min_cmd_duration:10000
 SETUVAR __done_notification_urgency_level:low

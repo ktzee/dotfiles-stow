@@ -4,17 +4,50 @@ hl.window_rule({ name = "ws-chrome", match = { class = "google-chrome" }, worksp
 hl.window_rule({ name = "ws-edge", match = { class = "Microsoft-edge" }, workspace = "2 silent" })
 hl.window_rule({ name = "ws-thunderbird", match = { class = "org.mozilla.Thunderbird" }, workspace = "3 silent" })
 hl.window_rule({ name = "brave", match = { class = "brave-browser" }, workspace = "name:q silent" })
+hl.window_rule({ name = "floorp", match = { class = "floorp" }, workspace = "name:q silent" })
 hl.window_rule({ name = "steam", match = { class = "steam" }, workspace = "name:s silent" })
 hl.window_rule({ name = "lutris", match = { class = "net.lutris.Lutris" }, workspace = "name:s silent" })
 hl.window_rule({ name = "signal", match = { class = "signal" }, workspace = "name:3 silent" })
+hl.window_rule({
+	name = "obsidian",
+	match = { class = "obsidian" },
+	float = true,
+	size = { "(monitor_w*0.9)", "(monitor_h*0.9)" },
+	center = true,
+})
 
 hl.window_rule({
 	name = "fifo-for-games",
-	match = { title = "Deadlock|VRising|Path of Exile|Path of Exile 2|^(steam_app_.*)|^(bms_linux)" },
-	immediate = true,
+	match = {
+		title = "deadlock.exe|VRising|Path of Exile|Path of Exile 2|^(steam_app_.*)|^(bms_linux)|pathofexilesteam.exe",
+	},
 	no_shadow = true,
 	no_anim = true,
 	allows_input = true,
+	content = "game",
+})
+
+hl.window_rule({
+	match = { class = "deadlock.exe" },
+	content = "game",
+	fullscreen = true,
+})
+
+hl.window_rule({
+	match = { class = "pathofexilesteam.exe" },
+	content = "game",
+})
+
+hl.window_rule({
+	match = { class = "steam_app.*" },
+	content = "game",
+})
+
+hl.window_rule({
+	name = "PoE Tools",
+	match = { title = "Exiled Exchange 2|Awakened PoE Trade" },
+	float = true,
+	no_shadow = true,
 })
 
 hl.window_rule({
@@ -60,11 +93,11 @@ hl.window_rule({ name = "pavucontrol-float", match = { class = "pavucontrol" }, 
 hl.window_rule({ name = "idle-inhibit-firefox", match = { class = "firefox" }, idle_inhibit = "fullscreen" })
 hl.window_rule({ name = "idle-inhibit-mpv", match = { class = "mpv" }, idle_inhibit = "fullscreen" })
 
-hl.window_rule({
-	name = "fix-xwayland-drags",
-	match = { class = "^$", title = "^$", xwayland = true, float = true, fullscreen = false, pin = false },
-	no_focus = true,
-})
+-- hl.window_rule({
+-- 	name = "fix-xwayland-drags",
+-- 	match = { class = "^$", title = "^$", xwayland = true, float = true, fullscreen = false, pin = false },
+-- 	no_focus = true,
+-- })
 
 hl.workspace_rule({ workspace = "1", no_rounding = true, monitor = monitor1 })
 hl.workspace_rule({ workspace = "2", no_rounding = true, monitor = monitor1 })

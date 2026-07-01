@@ -2,10 +2,10 @@ local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("alacritty"))
 hl.bind(mainMod .. " + SHIFT + z", hl.dsp.window.close())
-hl.bind(mainMod .. " + SHIFT + f", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd("rofi -combi-modi window,drun,run,ssh -show combi -show-icons"))
 hl.bind(mainMod .. " + B", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind(mainMod .. " + SHIFT + f", hl.dsp.window.float({ action = "toggle" }))
 
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
@@ -33,6 +33,8 @@ hl.bind(mainMod .. " + a", hl.dsp.focus({ workspace = "name:a" }))
 hl.bind(mainMod .. " + SHIFT + a", hl.dsp.window.move({ workspace = "name:a" }))
 hl.bind(mainMod .. " + s", hl.dsp.focus({ workspace = "name:s" }))
 hl.bind(mainMod .. " + SHIFT + s", hl.dsp.window.move({ workspace = "name:s" }))
+hl.bind(mainMod .. " + grave", hl.dsp.workspace.toggle_special("scratchpad"))
+hl.bind(mainMod .. " + SHIFT + grave", hl.dsp.window.move({ workspace = "special:scratchpad" }))
 
 -- hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 -- hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
@@ -46,9 +48,9 @@ hl.bind("ALT + SHIFT + TAB", hl.dsp.window.cycle_next({ prev = true }))
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
-hl.bind("Print", hl.dsp.exec_cmd("~/.scripts/grim-screenshot"))
-hl.bind(mainMod .. " + code:51", hl.dsp.exec_cmd("~/.scripts/grim-screenshot"))
-hl.bind("SHIFT + Print", hl.dsp.exec_cmd("~/.scripts/grim-screenshot screen"))
+hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m output -o ~/Pictures/Screenshots/"))
+hl.bind(mainMod .. " + code:51", hl.dsp.exec_cmd("hyprshot -m window -o ~/Pictures/Screenshots/"))
+hl.bind(mainMod .. " + SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/Screenshots/"))
 
 -- hl.bind("ALT + C", hl.dsp.exec_cmd("clipman pick -t CUSTOM --tool-args='hyprlauncher -m'"))
 -- hl.bind(mainMod .. " + E", hl.dsp.exec_cmd('foot -e "nvim"'))
