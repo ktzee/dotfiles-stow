@@ -16,26 +16,25 @@ hl.window_rule({
 	center = true,
 })
 
-hl.window_rule({
-	name = "fifo-for-games",
-	match = {
-		title = "deadlock.exe|VRising|Path of Exile|Path of Exile 2|^(steam_app_.*)|^(bms_linux)|pathofexilesteam.exe",
-	},
-	no_shadow = true,
-	no_anim = true,
-	allows_input = true,
-	content = "game",
-})
+-- hl.window_rule({
+-- 	name = "fifo-for-games",
+-- 	match = {
+-- 		title = "deadlock.exe|VRising|Path of Exile|^(steam_app_.*)|^(bms_linux)",
+-- 	},
+-- 	no_shadow = true,
+-- 	no_anim = true,
+-- 	allows_input = true,
+-- 	content = "game",
+-- })
 
 hl.window_rule({
 	match = { class = "deadlock.exe" },
 	content = "game",
 	fullscreen = true,
 })
-
 hl.window_rule({
-	match = { class = "pathofexilesteam.exe" },
-	content = "game",
+	match = { title = "Guilty Gear -Strive-" },
+	content = "",
 })
 
 hl.window_rule({
@@ -45,7 +44,7 @@ hl.window_rule({
 
 hl.window_rule({
 	name = "PoE Tools",
-	match = { title = "Exiled Exchange 2|Awakened PoE Trade" },
+	match = { title = "Exiled Exchange 2|Awakened PoE Trade|Scalpel" },
 	float = true,
 	no_shadow = true,
 })
@@ -106,6 +105,6 @@ hl.workspace_rule({ workspace = "4", no_rounding = true, monitor = monitor1 })
 hl.workspace_rule({ workspace = "5", no_rounding = true, monitor = monitor1 })
 hl.workspace_rule({ workspace = "name:q", no_rounding = true, monitor = monitor2 })
 hl.workspace_rule({ workspace = "name:w", no_rounding = true, monitor = monitor2 })
-hl.workspace_rule({ workspace = "name:e", no_rounding = true, monitor = monitor2 })
+hl.workspace_rule({ workspace = "name:e", no_rounding = true, monitor = monitor3 })
 hl.workspace_rule({ workspace = "name:a", no_rounding = true, monitor = monitor1 })
 hl.workspace_rule({ workspace = "name:s", no_rounding = true, monitor = monitor1 })

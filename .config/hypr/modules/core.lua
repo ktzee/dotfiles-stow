@@ -9,7 +9,11 @@ hl.config({
 		sensitivity = 0,
 		force_no_accel = 1,
 	},
-
+	-- Option to move cursor to newly changed workspace
+	-- cursor = {
+	-- 	no_warps = false,
+	-- 	warp_on_change_workspace = 1,
+	-- },
 	render = {
 		direct_scanout = 2,
 	},
@@ -29,7 +33,11 @@ hl.config({
 		rounding = 0,
 		blur = {
 			enabled = false,
+			variant = "drops",
 		},
+		-- wobble = {
+		-- 	enabled = true,
+		-- },
 	},
 
 	animations = {

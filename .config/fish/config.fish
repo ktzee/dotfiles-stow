@@ -10,7 +10,9 @@ set -gx BROWSER brave
 #end
 
 set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+set -x GPG_TTY (tty)
 gpgconf --launch gpg-agent
+gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/tmp/google-cloud-sdk/path.fish.inc' ]; . '/tmp/google-cloud-sdk/path.fish.inc'; end

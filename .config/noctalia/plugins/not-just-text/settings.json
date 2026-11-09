@@ -1,0 +1,11 @@
+{
+  "text": "Hello",
+  "fortuneEnabled": false,
+  "fortuneOffensive": false,
+  "fortuneEqual": false,
+  "fortuneCategory": "",
+  "fortuneMaxLength": 60,
+  "listEnabled": true,
+  "textFile": "~/.config/noctalia/plugins/not-just-text/prices.txt",
+  "refreshOnWallpaper": true
+}

@@ -6,7 +6,7 @@
 # Make sure jq and rofi are installed.
 
 
-league="Affliction"
+league="Mirage"
 declare -a item_type=("DeliriumOrb" "Scarab" "Currency" "Fragment" "Oil" "Essence" "Fossil" "DivinationCard" "UniqueWeapon")
 
 selection=$(printf '%s\n' "${item_type[@]}" | rofi -dmenu -i)

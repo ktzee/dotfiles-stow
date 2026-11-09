@@ -1,5 +1,8 @@
 local mainMod = "SUPER"
 
+--- tools
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("whisrs toggle"))
+---
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("alacritty"))
 hl.bind(mainMod .. " + SHIFT + z", hl.dsp.window.close())
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd("rofi -combi-modi window,drun,run,ssh -show combi -show-icons"))
